@@ -13,6 +13,22 @@ class ultimateNavBar extends StatelessWidget {
     this.barHeight
   }) : super(key: key);
 
+  generateItems(List<navBarItem> items){
+    return items.map((item) => InkWell(
+      child: Container(
+        height: 60,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(item.icon, size: item.size ?? 24, color: item.color ?? Colors.black,),
+            if (item.label != null) Text(item.label!),
+          ],
+        ),
+      ),
+      onTap: item.onTap,
+    )).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,22 +39,8 @@ class ultimateNavBar extends StatelessWidget {
       child: SafeArea(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            for (var item in items!)
-              InkWell(
-                onTap: item.onTap,
-                child: Container(
-                  height: 60,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(item.icon),
-                      Text(item.label!),
-                    ],
-                  ),
-                ),
-              )
-          ],
+          children:
+          generateItems(items!),
         ),
       ),
     );
