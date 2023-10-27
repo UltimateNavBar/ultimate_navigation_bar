@@ -1,7 +1,11 @@
+## 0.0.4
+
+* update Readme
+
+
 ## 0.0.3
 
-* update naming convetion
-* Update Readme
+* Update naming convetion
 
 ## 0.0.2
 
