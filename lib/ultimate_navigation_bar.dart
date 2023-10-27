@@ -1,8 +1,12 @@
+import 'package:flutter/material.dart';
 
-import 'ultimate_navigation_bar_platform_interface.dart';
+class ultimateNavBar extends StatelessWidget {
+  const ultimateNavBar({Key? key}) : super(key: key);
 
-class UltimateNavigationBar {
-  Future<String?> getPlatformVersion() {
-    return UltimateNavigationBarPlatform.instance.getPlatformVersion();
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text('Ultimate Navigation Bar'),
+    );
   }
 }
