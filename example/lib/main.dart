@@ -33,34 +33,27 @@ class _MyAppState extends State<MyApp> {
             ],
           ),
         ),
-        bottomNavigationBar: ultimateNavBar(
+        bottomNavigationBar: UltimateNavBar(
           backgroundColor: Colors.grey.shade500,
           itemsColor: Colors.white,
           iconsSize: 30,
           items:[
-            navBarItem(
+            NavBarItem(
               label: 'Home',
               icon: Icons.search,
               onTap: () {
                 print('tapped');
               }
             ),
-            navBarItem(
+            NavBarItem(
               label: 'Search',
                 icon: Icons.search,
                 onTap: () {
                   print('tapped');
                 }
             ),
-            navBarItem(
+            NavBarItem(
               label: 'Profile',
-                icon: Icons.search,
-                onTap: () {
-                  print('tapped');
-                }
-            ),
-            navBarItem(
-                label: 'Profile',
                 icon: Icons.search,
                 onTap: () {
                   print('tapped');
