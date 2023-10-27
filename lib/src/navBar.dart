@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:ultimate_navigation_bar/src/item.dart';
 
-class ultimateNavBar extends StatelessWidget {
-  final List<navBarItem>? items;
+class UltimateNavBar extends StatelessWidget {
+  final List<NavBarItem>? items;
   final Color? backgroundColor;
   final int? barHeight;
   final double? iconsSize;
   final Color? itemsColor;
 
-  const ultimateNavBar({
+  const UltimateNavBar({
     Key? key,
     required this.items,
     this.backgroundColor,
@@ -17,8 +17,9 @@ class ultimateNavBar extends StatelessWidget {
     this.itemsColor,
   }) : super(key: key);
 
-  generateItems(List<navBarItem> items){
+  generateItems(List<NavBarItem> items){
     return items.map((item) => InkWell(
+      onTap: item.onTap,
       child: Container(
         height: 60,
         child: Column(
@@ -29,7 +30,6 @@ class ultimateNavBar extends StatelessWidget {
           ],
         ),
       ),
-      onTap: item.onTap,
     )).toList();
   }
 
