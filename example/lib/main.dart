@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
-import 'package:ultimate_navigation_bar/navBarItems.dart';
 import 'package:ultimate_navigation_bar/ultimate_navigation_bar.dart';
 
 void main() {
@@ -35,18 +34,35 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         bottomNavigationBar: ultimateNavBar(
+          backgroundColor: Colors.grey.shade500,
           items:[
             navBarItem(
-              label: 'Home', icon: Icons.search,
+              label: 'Home',
+              icon: Icons.search,
+              onTap: () {
+                print('tapped');
+              }
             ),
             navBarItem(
-              label: 'Search', icon: Icons.search
+              label: 'Search',
+                icon: Icons.search,
+                onTap: () {
+                  print('tapped');
+                }
             ),
             navBarItem(
-              label: 'Profile', icon: Icons.search
+              label: 'Profile',
+                icon: Icons.search,
+                onTap: () {
+                  print('tapped');
+                }
             ),
             navBarItem(
-                label: 'Profile', icon: Icons.search
+                label: 'Profile',
+                icon: Icons.search,
+                onTap: () {
+                  print('tapped');
+                }
             ),
           ]
         ),
