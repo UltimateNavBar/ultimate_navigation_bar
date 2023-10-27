@@ -7,5 +7,6 @@ class navBarItem{
   final IconData icon;
   final double? size;
   final Color? color;
-  const navBarItem({this.label, this.route, required this.icon, this.size, this.color});
+  final Function()? onTap;
+  const navBarItem({this.label, this.route, required this.icon, this.size, this.color , this.onTap});
 }
