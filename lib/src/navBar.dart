@@ -5,12 +5,16 @@ class ultimateNavBar extends StatelessWidget {
   final List<navBarItem>? items;
   final Color? backgroundColor;
   final int? barHeight;
+  final double? iconsSize;
+  final Color? itemsColor;
 
   const ultimateNavBar({
     Key? key,
     required this.items,
     this.backgroundColor,
-    this.barHeight
+    this.barHeight,
+    this.iconsSize,
+    this.itemsColor,
   }) : super(key: key);
 
   generateItems(List<navBarItem> items){
@@ -20,7 +24,7 @@ class ultimateNavBar extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(item.icon, size: item.size ?? 24, color: item.color ?? Colors.black,),
+            Icon(item.icon, size: iconsSize ?? 24, color: itemsColor ?? Colors.black,),
             if (item.label != null) Text(item.label!),
           ],
         ),
