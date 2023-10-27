@@ -1,7 +1,7 @@
 name: ultimate_navigation_bar
-description: A new Flutter plugin project.
-version: 0.0.1
-homepage:
+description: The ultimate navigation bar for flutter.
+version: 0.0.2
+homepage: https://github.com/simon-jo8/ultimate_navigation_bar/tree/dev
 
 environment:
   sdk: '>=3.1.0 <4.0.0'
