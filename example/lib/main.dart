@@ -35,6 +35,8 @@ class _MyAppState extends State<MyApp> {
         ),
         bottomNavigationBar: ultimateNavBar(
           backgroundColor: Colors.grey.shade500,
+          itemsColor: Colors.white,
+          iconsSize: 30,
           items:[
             navBarItem(
               label: 'Home',
