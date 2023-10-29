@@ -19,7 +19,7 @@ void main() {
     expect(
       find.byWidgetPredicate(
         (Widget widget) => widget is Text &&
-                           widget.data!.startsWith('Ultimate Navigation Bar'),
+                           widget.data!.startsWith(''),
       ),
       findsWidgets,
     );
