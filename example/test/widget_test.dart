@@ -21,7 +21,7 @@ void main() {
         (Widget widget) => widget is Text &&
                            widget.data!.startsWith('Running on:'),
       ),
-      findsOneWidget,
+      findsWidgets,
     );
   });
 }
