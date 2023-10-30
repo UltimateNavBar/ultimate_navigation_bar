@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-import 'package:flutter/services.dart';
 import 'package:ultimate_navigation_bar/ultimate_navigation_bar.dart';
 
 void main() {
@@ -23,11 +21,11 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Ultimate Navigation Bar'),
         ),
-        body: Center(
+        body: const Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const Text(
+              Text(
                 'Ultimate Navigation Bar',
               ),
             ],

@@ -20,7 +20,7 @@ class UltimateNavBar extends StatelessWidget {
   generateItems(List<NavBarItem> items){
     return items.map((item) => InkWell(
       onTap: item.onTap,
-      child: Container(
+      child: SizedBox(
         height: 60,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
