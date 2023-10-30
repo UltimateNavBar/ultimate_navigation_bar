@@ -1,5 +1,5 @@
 library ultimate_navigation_bar;
 
-export 'src/navBar.dart';
+export 'src/nav_bar.dart';
 export 'src/item.dart';
 
