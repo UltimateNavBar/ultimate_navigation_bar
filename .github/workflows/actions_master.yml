@@ -1,0 +1,19 @@
+name: Pub dev publish
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  pub_dev publish:
+    name: Publish to pub.dev
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - run: flutter pub publish
