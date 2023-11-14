@@ -13,7 +13,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,33 +31,29 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         bottomNavigationBar: UltimateNavBar(
-          backgroundColor: Colors.grey.shade500,
-          itemsColor: Colors.white,
-          iconsSize: 30,
-          items:[
-            NavBarItem(
-              label: 'Home',
-              icon: Icons.search,
-              onTap: () {
-                print('tapped');
-              }
-            ),
-            NavBarItem(
-              label: 'Search',
-                icon: Icons.search,
-                onTap: () {
-                  print('tapped');
-                }
-            ),
-            NavBarItem(
-              label: 'Profile',
-                icon: Icons.search,
-                onTap: () {
-                  print('tapped');
-                }
-            ),
-          ]
-        ),
+            backgroundColor: Colors.blue.shade500,
+            itemsColor: Colors.white,
+            iconsSize: 30,
+            items: [
+              NavBarItem(
+                  label: 'Home',
+                  icon: Icons.home,
+                  onTap: () {
+                    print('tapped');
+                  }),
+              NavBarItem(
+                  label: 'Search',
+                  icon: Icons.search,
+                  onTap: () {
+                    print('tapped');
+                  }),
+              NavBarItem(
+                  label: 'Profile',
+                  icon: Icons.person,
+                  onTap: () {
+                    print('tapped');
+                  }),
+            ]),
       ),
     );
   }

@@ -1,7 +1,6 @@
-
 import 'package:flutter/cupertino.dart';
 
-class NavBarItem{
+class NavBarItem {
   final String? label;
   final String? route;
   final IconData icon;

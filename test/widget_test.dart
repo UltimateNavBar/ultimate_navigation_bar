@@ -28,7 +28,9 @@ void main() {
     ];
 
     // Generate the items for the `UltimateNavBar` widget.
-    final generatedItems = const UltimateNavBar(items: [],).generateItems(items);
+    final generatedItems = const UltimateNavBar(
+      items: [],
+    ).generateItems(items);
 
     // Verify that the items are generated correctly.
     expect(generatedItems.length, 3);
