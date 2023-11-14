@@ -17,20 +17,28 @@ class UltimateNavBar extends StatelessWidget {
     this.itemsColor,
   }) : super(key: key);
 
-  generateItems(List<NavBarItem> items){
-    return items.map((item) => InkWell(
-      onTap: item.onTap,
-      child: SizedBox(
-        height: 60,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(item.icon, size: iconsSize ?? 24, color: itemsColor ?? Colors.black,),
-            if (item.label != null) Text(item.label!),
-          ],
-        ),
-      ),
-    )).toList();
+  generateItems(List<NavBarItem> items) {
+    return items
+        .map((item) => InkWell(
+              onTap: item.onTap,
+              child: SizedBox(
+                height: 60,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      item.icon,
+                      size: iconsSize ?? 24,
+                      color: itemsColor ?? Colors.black,
+                    ),
+                    if (item.label != null)
+                      Text(item.label!,
+                          style: TextStyle(color: itemsColor ?? Colors.black))
+                  ],
+                ),
+              ),
+            ))
+        .toList();
   }
 
   @override
@@ -43,8 +51,7 @@ class UltimateNavBar extends StatelessWidget {
       child: SafeArea(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children:
-          generateItems(items!),
+          children: generateItems(items!),
         ),
       ),
     );
