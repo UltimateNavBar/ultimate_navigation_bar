@@ -6,6 +6,7 @@ class UltimateNavBar extends StatelessWidget {
   final Color? backgroundColor;
   final int? barHeight;
   final bool? isFloating;
+  final TextAlign? alignmentItems;
   final BorderRadius? borderRadiusBar;
   final double? iconsSize;
   final Color? itemsColor;
@@ -19,9 +20,19 @@ class UltimateNavBar extends StatelessWidget {
     this.borderRadiusBar,
     this.isFloating,
     this.itemsColor,
+    this.alignmentItems,
   }) : super(key: key);
 
   generateItems(List<NavBarItem> items) {
+    final CrossAxisAlignment orientation;
+
+    if(alignmentItems == TextAlign.start) {
+      orientation = CrossAxisAlignment.start;
+    }else if(alignmentItems == TextAlign.end) {
+      orientation = CrossAxisAlignment.end;
+    }else {
+      orientation = CrossAxisAlignment.center;
+    }
 
     if (items.length > 5) {
       throw Exception('You can\'t have more than 5 items in the navigation bar');
@@ -34,6 +45,7 @@ class UltimateNavBar extends StatelessWidget {
                 height: 60,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: orientation,
                   children: [
                     Icon(
                       item.icon,
@@ -42,7 +54,7 @@ class UltimateNavBar extends StatelessWidget {
                     ),
                     if (item.label != null)
                       Text(item.label!,
-                          style: TextStyle(color: itemsColor ?? Colors.black))
+                        style: TextStyle(color: itemsColor ?? Colors.black),)
                   ],
                 ),
               ),

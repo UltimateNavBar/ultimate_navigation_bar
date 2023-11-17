@@ -36,23 +36,12 @@ class _MyAppState extends State<MyApp> {
             itemsColor: Colors.white,
             isFloating: true,
             iconsSize: 30,
+            alignmentItems: TextAlign.start,
             borderRadiusBar: BorderRadius.circular(80),
             items: [
               NavBarItem(
-                  label: 'Home',
-                  icon: Icons.home,
-                  onTap: () {
-                    print('tapped');
-                  }),
-              NavBarItem(
                   label: 'Search',
                   icon: Icons.search,
-                  onTap: () {
-                    print('tapped');
-                  }),
-              NavBarItem(
-                  label: 'Profile',
-                  icon: Icons.person,
                   onTap: () {
                     print('tapped');
                   }),
