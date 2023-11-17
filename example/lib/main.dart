@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
         bottomNavigationBar: UltimateNavBar(
             backgroundColor: Colors.blue.shade500,
             itemsColor: Colors.white,
-            marginBar: const EdgeInsets.all(20),
+            isFloating: true,
             iconsSize: 30,
             borderRadiusBar: BorderRadius.circular(80),
             items: [
