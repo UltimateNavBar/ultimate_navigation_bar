@@ -16,7 +16,7 @@ To use this plugin, add `ultimate_navigation_bar` as a [dependency in your pubsp
 | `barHeight`          | AppBar height                                                                        | `int` |
 | `iconsSize`          | Size of icons                                                                        | `double` |
 | `isFloating`          | Nav Bar Floating                                                                        | `bool` |
-|`items`| List of Items | List |
+|`items`| List of Items | `List` |
 |`borderRadiusBar`| Border Radius of Bar (work if isFloating = true)| `BorderRadius`|
 
 ### NavBarItem
