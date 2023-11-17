@@ -56,6 +56,18 @@ class _MyAppState extends State<MyApp> {
                   onTap: () {
                     print('tapped');
                   }),
+              NavBarItem(
+                  label: 'Profile',
+                  icon: Icons.person,
+                  onTap: () {
+                    print('tapped');
+                  }),
+              NavBarItem(
+                  label: 'Profile',
+                  icon: Icons.person,
+                  onTap: () {
+                    print('tapped');
+                  }),
             ]),
       ),
     );
