@@ -14,15 +14,16 @@ dependencies:
 
 ### UltimateNavBar
 
-| Attributes      | Description                                                                          | Type |
-|-----------------|------------------|------------|
-| `backgroundColor` | AppBar background                                                                    | `Color` |
-| `itemsColor`        | Color of items                                               | `Color` |
-| `barHeight`          | AppBar height                                                                        | `int` |
-| `iconsSize`          | Size of icons                                                                        | `double` |
-| `isFloating`          | Nav Bar Floating                                                                        | `bool` |
-|`items`| List of Items | `List` |
-|`borderRadiusBar`| Border Radius of Bar (work if isFloating = true)| `BorderRadius`|
+| Attributes        | Description                                     | Type          |
+|-------------------|-------------------------------------------------|---------------|
+| `backgroundColor` | AppBar background                               | `Color`       |
+| `itemsColor`      | Color of items                                  | `Color`       |
+| `barHeight`       | AppBar height                                   | `int`         |
+| `iconsSize`       | Size of icons                                   | `double`      |
+| `isFloating`      | Nav Bar Floating                                | `bool`        |
+| `items`           | List of Items                                   | `List`        |
+| `alignmentItems`   | Alignment vertical of icons/text                | `TextAlign`   |
+| `borderRadiusBar` | Border Radius of Bar (work if isFloating = true) | `BorderRadius` |
 
 ### NavBarItem
 
