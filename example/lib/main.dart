@@ -37,18 +37,13 @@ class _MyAppState extends State<MyApp> {
             currentIndex: currentIndex,
             backgroundColor: Colors.blue.shade500,
             itemsColor: Colors.white,
-            marginBar: const EdgeInsets.all(20),
+            isFloating: true,
             iconsSize: 30,
+            alignmentItems: TextAlign.start,
             borderRadiusBar: BorderRadius.circular(80),
             showIndicator: true,
 
             items: [
-              NavBarItem(
-                  label: 'Home',
-                  icon: Icons.home,
-                  onTap: () {
-                    print('tapped');
-                  }),
               NavBarItem(
                   label: 'Search',
                   icon: Icons.search,
@@ -72,7 +67,6 @@ class _MyAppState extends State<MyApp> {
                   icon: Icons.person,
                   onTap: () {
                     print('tapped');
-
                   }),
             ],
           onChanged: (value) {
