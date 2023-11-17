@@ -1,3 +1,8 @@
+## 0.0.6
+
+* Limit the number of items in a navBar to 5
+* Add Margin and Border Radius
+
 ## 0.0.5
 
 * update Readme
