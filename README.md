@@ -9,6 +9,7 @@ The ultimate navigation bar for flutter.
 To use this plugin, add `ultimate_navigation_bar` as a [dependency in your pubspec.yaml file](https://flutter.dev/docs/development/platform-integration/platform-channels).
 
 ### Documentation
+
 ### Example
 
 ``` dart
