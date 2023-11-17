@@ -4,7 +4,7 @@
 The ultimate navigation bar for flutter.
 
 ## How to use
-Typically ConvexAppBar can work with `Scaffold` by setup its `bottomNavigationBar`.
+Ultimate Navigation Bar work with `Scaffold` by setup its `bottomNavigationBar`.
 To use this plugin, add `ultimate_navigation_bar` as a [dependency in your pubspec.yaml file](https://flutter.dev/docs/development/platform-integration/platform-channels).
 
 ```yaml
