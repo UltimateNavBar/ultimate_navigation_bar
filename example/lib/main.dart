@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-import 'package:flutter/services.dart';
 import 'package:ultimate_navigation_bar/ultimate_navigation_bar.dart';
 
 void main() {
@@ -15,7 +13,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,7 +20,40 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Ultimate Navigation Bar'),
         ),
-        body: ultimateNavBar(),
+        body: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Ultimate Navigation Bar',
+              ),
+            ],
+          ),
+        ),
+        bottomNavigationBar: UltimateNavBar(
+            backgroundColor: Colors.blue.shade500,
+            itemsColor: Colors.white,
+            iconsSize: 30,
+            items: [
+              NavBarItem(
+                  label: 'Home',
+                  icon: Icons.home,
+                  onTap: () {
+                    print('tapped');
+                  }),
+              NavBarItem(
+                  label: 'Search',
+                  icon: Icons.search,
+                  onTap: () {
+                    print('tapped');
+                  }),
+              NavBarItem(
+                  label: 'Profile',
+                  icon: Icons.person,
+                  onTap: () {
+                    print('tapped');
+                  }),
+            ]),
       ),
     );
   }

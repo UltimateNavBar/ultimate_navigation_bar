@@ -1,12 +1,4 @@
-import 'package:flutter/material.dart';
+library ultimate_navigation_bar;
 
-class ultimateNavBar extends StatelessWidget {
-  const ultimateNavBar({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Ultimate Navigation Bar'),
-    );
-  }
-}
+export 'src/nav_bar.dart';
+export 'src/item.dart';
