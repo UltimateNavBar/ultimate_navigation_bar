@@ -13,6 +13,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,12 +34,15 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         bottomNavigationBar: UltimateNavBar(
+            currentIndex: currentIndex,
             backgroundColor: Colors.blue.shade500,
             itemsColor: Colors.white,
             isFloating: true,
             iconsSize: 30,
             alignmentItems: TextAlign.start,
             borderRadiusBar: BorderRadius.circular(80),
+            showIndicator: true,
+
             items: [
               NavBarItem(
                   label: 'Search',
@@ -57,7 +62,17 @@ class _MyAppState extends State<MyApp> {
                   onTap: () {
                     print('tapped');
                   }),
-            ]),
+              NavBarItem(
+                  label: 'Profile',
+                  icon: Icons.person,
+                  onTap: () {
+                    print('tapped');
+                  }),
+            ],
+          onChanged: (value) {
+            currentIndex = value;
+            setState(() {});
+          },),
       ),
     );
   }
