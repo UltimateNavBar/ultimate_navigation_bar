@@ -5,7 +5,7 @@ class UltimateNavBar extends StatelessWidget {
   final List<NavBarItem>? items;
   final Color? backgroundColor;
   final int? barHeight;
-  final EdgeInsets? marginBar;
+  final bool? isFloating;
   final BorderRadius? borderRadiusBar;
   final double? iconsSize;
   final Color? itemsColor;
@@ -17,7 +17,7 @@ class UltimateNavBar extends StatelessWidget {
     this.barHeight,
     this.iconsSize,
     this.borderRadiusBar,
-    this.marginBar,
+    this.isFloating,
     this.itemsColor,
   }) : super(key: key);
 
@@ -53,14 +53,14 @@ class UltimateNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: marginBar ?? EdgeInsets.all(0),
+      margin: isFloating == true ? EdgeInsets.only(left: 20, right: 20, bottom: 30) : EdgeInsets.all(0),
       height: barHeight?.toDouble() ?? 90,
       decoration: BoxDecoration(
         color: backgroundColor ?? Colors.white,
-        borderRadius:  borderRadiusBar ?? BorderRadius.circular(0),
+        borderRadius:  borderRadiusBar != null && isFloating == true ? borderRadiusBar : BorderRadius.circular(0),
       ),
       child: SafeArea(
-        bottom: marginBar != null ? false : true,
+        bottom: isFloating == true ? false : true,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: generateItems(items!),
