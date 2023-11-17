@@ -40,24 +40,22 @@ class UltimateNavBar extends StatelessWidget {
   generateItems(List<NavBarItem> items) {
     final CrossAxisAlignment orientation;
 
-    if(alignmentItems == TextAlign.start) {
+    if (alignmentItems == TextAlign.start) {
       orientation = CrossAxisAlignment.start;
-    }else if(alignmentItems == TextAlign.end) {
+    } else if (alignmentItems == TextAlign.end) {
       orientation = CrossAxisAlignment.end;
-    }else {
+    } else {
       orientation = CrossAxisAlignment.center;
     }
 
     if (items.length > 5) {
-      throw Exception('You can\'t have more than 5 items in the navigation bar');
+      throw Exception(
+          'You can\'t have more than 5 items in the navigation bar');
     }
 
     return items
         .map((item) => GestureDetector(
-              onTap: ()=> {
-                onPressed(items.indexOf(item)),
-                item.onTap
-              },
+              onTap: () => {onPressed(items.indexOf(item)), item.onTap},
               child: SizedBox(
                 height: 60,
                 child: Column(
@@ -84,7 +82,9 @@ class UltimateNavBar extends StatelessWidget {
                               width: 8,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(5.0),
-                                 color: value == items.indexOf(item) ? itemsColor : Colors.transparent,
+                                color: value == items.indexOf(item)
+                                    ? itemsColor
+                                    : Colors.transparent,
                               ),
                             ),
                           );
@@ -99,11 +99,15 @@ class UltimateNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: isFloating == true ? EdgeInsets.only(left: 20, right: 20, bottom: 30) : EdgeInsets.all(0),
+      margin: isFloating == true
+          ? EdgeInsets.only(left: 20, right: 20, bottom: 30)
+          : EdgeInsets.all(0),
       height: barHeight?.toDouble() ?? 90,
       decoration: BoxDecoration(
         color: backgroundColor ?? Colors.white,
-        borderRadius:  borderRadiusBar != null && isFloating == true ? borderRadiusBar : BorderRadius.circular(0),
+        borderRadius: borderRadiusBar != null && isFloating == true
+            ? borderRadiusBar
+            : BorderRadius.circular(0),
       ),
       child: SafeArea(
         bottom: isFloating == true ? false : true,

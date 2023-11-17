@@ -34,45 +34,45 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         bottomNavigationBar: UltimateNavBar(
-            currentIndex: currentIndex,
-            backgroundColor: Colors.blue.shade500,
-            itemsColor: Colors.white,
-            isFloating: true,
-            iconsSize: 30,
-            alignmentItems: TextAlign.start,
-            borderRadiusBar: BorderRadius.circular(80),
-            showIndicator: true,
-
-            items: [
-              NavBarItem(
-                  label: 'Search',
-                  icon: Icons.search,
-                  onTap: () {
-                    print('tapped');
-                  }),
-              NavBarItem(
-                  label: 'Profile',
-                  icon: Icons.person,
-                  onTap: () {
-                    print('tapped');
-                  }),
-              NavBarItem(
-                  label: 'Profile',
-                  icon: Icons.person,
-                  onTap: () {
-                    print('tapped');
-                  }),
-              NavBarItem(
-                  label: 'Profile',
-                  icon: Icons.person,
-                  onTap: () {
-                    print('tapped');
-                  }),
-            ],
+          currentIndex: currentIndex,
+          backgroundColor: Colors.blue.shade500,
+          itemsColor: Colors.white,
+          isFloating: true,
+          iconsSize: 30,
+          alignmentItems: TextAlign.start,
+          borderRadiusBar: BorderRadius.circular(80),
+          showIndicator: true,
+          items: [
+            NavBarItem(
+                label: 'Search',
+                icon: Icons.search,
+                onTap: () {
+                  print('tapped');
+                }),
+            NavBarItem(
+                label: 'Profile',
+                icon: Icons.person,
+                onTap: () {
+                  print('tapped');
+                }),
+            NavBarItem(
+                label: 'Profile',
+                icon: Icons.person,
+                onTap: () {
+                  print('tapped');
+                }),
+            NavBarItem(
+                label: 'Profile',
+                icon: Icons.person,
+                onTap: () {
+                  print('tapped');
+                }),
+          ],
           onChanged: (value) {
             currentIndex = value;
             setState(() {});
-          },),
+          },
+        ),
       ),
     );
   }
