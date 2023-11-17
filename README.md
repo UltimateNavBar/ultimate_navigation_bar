@@ -9,7 +9,7 @@ To use this plugin, add `ultimate_navigation_bar` as a [dependency in your pubsp
 
 ```yaml
 dependencies:
-  ultimate_navigation_bar: ^0.0.8
+  ultimate_navigation_bar: ^0.0.9
 ```
 
 ### UltimateNavBar
