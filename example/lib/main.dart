@@ -17,6 +17,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.blue.shade100,
         appBar: AppBar(
           title: const Text('Ultimate Navigation Bar'),
         ),
@@ -33,7 +34,9 @@ class _MyAppState extends State<MyApp> {
         bottomNavigationBar: UltimateNavBar(
             backgroundColor: Colors.blue.shade500,
             itemsColor: Colors.white,
+            marginBar: const EdgeInsets.all(20),
             iconsSize: 30,
+            borderRadiusBar: BorderRadius.circular(80),
             items: [
               NavBarItem(
                   label: 'Home',
