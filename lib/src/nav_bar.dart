@@ -18,6 +18,11 @@ class UltimateNavBar extends StatelessWidget {
   }) : super(key: key);
 
   generateItems(List<NavBarItem> items) {
+
+    if (items.length > 5) {
+      throw Exception('You can\'t have more than 5 items in the navigation bar');
+    }
+
     return items
         .map((item) => InkWell(
               onTap: item.onTap,
