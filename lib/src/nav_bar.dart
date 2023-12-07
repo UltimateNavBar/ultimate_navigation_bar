@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:ultimate_navigation_bar/src/item.dart';
 
+
+
+enum GradientType {
+  horizontal,
+  vertical,
+}
+
+
 class UltimateNavBar extends StatelessWidget {
   final List<NavBarItem> items;
   final Color? backgroundColor;
+  final List<Color>? gradient;
+  final GradientType? gradientType;
   final int? barHeight;
   final bool? isFloating;
   final TextAlign? alignmentItems;
@@ -14,6 +24,9 @@ class UltimateNavBar extends StatelessWidget {
   final int? currentIndex;
   final ValueChanged<int> onChanged;
 
+
+
+
   /// ! THIS WILL IDENTITFY WHICH TAB IS CURRENTLY ACTIVE
   /// ! USING THIS TO SHOW AND HIDE TAB INDICATOR
   static ValueNotifier<int> notifyIndex = ValueNotifier<int>(0);
@@ -23,6 +36,8 @@ class UltimateNavBar extends StatelessWidget {
     required this.items,
     required this.onChanged,
     this.backgroundColor,
+    this.gradient,
+    this.gradientType,
     this.barHeight,
     this.iconsSize,
     this.borderRadiusBar,
@@ -34,6 +49,10 @@ class UltimateNavBar extends StatelessWidget {
   })  : assert(
           (items.length < 6),
           "NavBar items can't contain more than 5 items",
+        ),
+        assert(
+        (gradient?.length ?? 0) >= 2,
+        "The gradient list must contain at least two colors",
         ),
         super(key: key);
 
@@ -100,11 +119,17 @@ class UltimateNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: isFloating == true
-          ? EdgeInsets.only(left: 20, right: 20, bottom: 30)
-          : EdgeInsets.all(0),
+          ? const EdgeInsets.only(left: 20, right: 20, bottom: 30)
+          : const EdgeInsets.all(0),
       height: barHeight?.toDouble() ?? 90,
       decoration: BoxDecoration(
-        color: backgroundColor ?? Colors.white,
+        color: backgroundColor ?? Colors.blue,
+        gradient: gradient != null
+          ? LinearGradient(colors: gradient ?? [Colors.blue.shade400, Colors.blue.shade700],
+          begin: gradientType == GradientType.horizontal ? Alignment.centerLeft : Alignment.topCenter,
+          end: gradientType == GradientType.horizontal ? Alignment.centerRight : Alignment.bottomCenter,
+        ):null,
+
         borderRadius: borderRadiusBar != null && isFloating == true
             ? borderRadiusBar
             : BorderRadius.circular(0),
