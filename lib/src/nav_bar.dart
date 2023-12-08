@@ -50,10 +50,6 @@ class UltimateNavBar extends StatelessWidget {
           (items.length < 6),
           "NavBar items can't contain more than 5 items",
         ),
-        assert(
-        (gradient?.length ?? 0) >= 2,
-        "The gradient list must contain at least two colors",
-        ),
         super(key: key);
 
   generateItems(List<NavBarItem> items) {
