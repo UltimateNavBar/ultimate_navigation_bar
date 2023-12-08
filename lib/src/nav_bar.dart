@@ -12,7 +12,7 @@ enum GradientType {
 class UltimateNavBar extends StatelessWidget {
   final List<NavBarItem> items;
   final Color? backgroundColor;
-  final List<Color>? gradient;
+  final List<Color>? gradientColors;
   final GradientType? gradientType;
   final int? barHeight;
   final bool? isFloating;
@@ -35,7 +35,7 @@ class UltimateNavBar extends StatelessWidget {
     required this.items,
     required this.onChanged,
     this.backgroundColor,
-    this.gradient,
+    this.gradientColors,
     this.gradientType,
     this.barHeight,
     this.iconsSize,
@@ -109,8 +109,8 @@ class UltimateNavBar extends StatelessWidget {
       height: barHeight?.toDouble() ?? 90,
       decoration: BoxDecoration(
         color: backgroundColor ?? Colors.blue,
-        gradient: gradient != null
-          ? LinearGradient(colors: gradient ?? [Colors.blue.shade400, Colors.blue.shade700],
+        gradient: gradientColors != null
+          ? LinearGradient(colors: gradientColors!,
           begin: gradientType == GradientType.horizontal ? Alignment.centerLeft : Alignment.topCenter,
           end: gradientType == GradientType.horizontal ? Alignment.centerRight : Alignment.bottomCenter,
         ):null,
