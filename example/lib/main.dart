@@ -46,7 +46,6 @@ class _MyAppState extends State<MyApp> {
           itemsColor: Colors.white,
           isFloating: true,
           iconsSize: 30,
-          alignmentItems: TextAlign.start,
           borderRadiusBar: BorderRadius.circular(80),
           showIndicator: true,
           items: [

@@ -16,7 +16,6 @@ class UltimateNavBar extends StatelessWidget {
   final GradientType? gradientType;
   final int? barHeight;
   final bool? isFloating;
-  final TextAlign? alignmentItems;
   final BorderRadius? borderRadiusBar;
   final double? iconsSize;
   final Color? itemsColor;
@@ -45,7 +44,6 @@ class UltimateNavBar extends StatelessWidget {
     this.itemsColor,
     this.showIndicator,
     this.currentIndex,
-    this.alignmentItems,
   })  : assert(
           (items.length < 6),
           "NavBar items can't contain more than 5 items",
@@ -53,15 +51,6 @@ class UltimateNavBar extends StatelessWidget {
         super(key: key);
 
   generateItems(List<NavBarItem> items) {
-    final CrossAxisAlignment orientation;
-
-    if (alignmentItems == TextAlign.start) {
-      orientation = CrossAxisAlignment.start;
-    } else if (alignmentItems == TextAlign.end) {
-      orientation = CrossAxisAlignment.end;
-    } else {
-      orientation = CrossAxisAlignment.center;
-    }
 
     if (items.length > 5) {
       throw Exception(
@@ -75,7 +64,7 @@ class UltimateNavBar extends StatelessWidget {
                 height: 60,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: orientation,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Icon(
                       item.icon,
