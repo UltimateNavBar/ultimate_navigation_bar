@@ -36,8 +36,8 @@ void main() {
 
     // Verify that the items are generated correctly.
     expect(generatedItems.length, 3);
-    expect(generatedItems[0], isA<InkWell>());
-    expect(generatedItems[1], isA<InkWell>());
-    expect(generatedItems[2], isA<InkWell>());
+    expect(generatedItems[0], isA<GestureDetector>());
+    expect(generatedItems[1], isA<GestureDetector>());
+    expect(generatedItems[2], isA<GestureDetector>());
   });
 }
