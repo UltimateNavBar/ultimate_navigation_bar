@@ -108,6 +108,13 @@ class UltimateNavBar extends StatelessWidget {
         borderRadius: borderRadiusBar != null && isFloating == true
             ? borderRadiusBar
             : BorderRadius.circular(0),
+        boxShadow: isFloating == true
+          ? [
+            const BoxShadow(
+              color:Colors.grey,
+              blurRadius: 4.0,
+              offset: Offset(2.0,2.0),
+            )] : null
       ),
       child: SafeArea(
         bottom: isFloating == true ? false : true,
