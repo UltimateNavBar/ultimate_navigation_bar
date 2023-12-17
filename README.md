@@ -33,6 +33,8 @@ dependencies:
 | `icons`          | Icons                                                                       | `IconData` |
 | `onTap`          | Function to execute on tap                                                                        | `Functions` |
 
+### Documentation
+
 ### Example
 
 ``` dart
