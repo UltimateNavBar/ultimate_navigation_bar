@@ -1,6 +1,12 @@
+## 0.1.2
+
+* Adding gradient to Nav Bar
+
+
+
 ## 0.1.1
 
-* Adding shadow and gradient to Nav Bar
+* Adding shadow to Nav Bar
 
 ## 0.1.0
 
