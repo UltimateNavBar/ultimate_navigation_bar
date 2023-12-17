@@ -6,12 +6,13 @@ void main() {
   // This test ensures that the `UltimateNavBar` widget can be constructed correctly.
   testWidgets('UltimateNavBar construction', (WidgetTester tester) async {
     // Build the `UltimateNavBar` widget.
-    const UltimateNavBar navBar = UltimateNavBar(
+    UltimateNavBar navBar = UltimateNavBar(
       items: [
         NavBarItem(icon: Icons.home, label: 'Home'),
         NavBarItem(icon: Icons.search, label: 'Search'),
         NavBarItem(icon: Icons.settings, label: 'Settings'),
       ],
+      onChanged: (value) {},
     );
 
     // Verify that the widget is constructed correctly.
@@ -28,14 +29,15 @@ void main() {
     ];
 
     // Generate the items for the `UltimateNavBar` widget.
-    final generatedItems = const UltimateNavBar(
+    final generatedItems = UltimateNavBar(
       items: [],
+      onChanged: (int value) {},
     ).generateItems(items);
 
     // Verify that the items are generated correctly.
     expect(generatedItems.length, 3);
-    expect(generatedItems[0], isA<InkWell>());
-    expect(generatedItems[1], isA<InkWell>());
-    expect(generatedItems[2], isA<InkWell>());
+    expect(generatedItems[0], isA<GestureDetector>());
+    expect(generatedItems[1], isA<GestureDetector>());
+    expect(generatedItems[2], isA<GestureDetector>());
   });
 }
