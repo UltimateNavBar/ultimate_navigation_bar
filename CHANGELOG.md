@@ -1,3 +1,15 @@
+## 0.1.0
+
+* Update Readme
+
+## 0.0.9
+
+* Update Readme
+
+## 0.0.8
+
+* Add indicator page
+
 ## 0.0.7
 
 * Update Readme
