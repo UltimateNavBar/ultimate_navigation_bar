@@ -1,8 +1,10 @@
+## 0.1.3
+
+* Fixing gradient
+
 ## 0.1.2
 
 * Adding gradient to Nav Bar
-
-
 
 ## 0.1.1
 
