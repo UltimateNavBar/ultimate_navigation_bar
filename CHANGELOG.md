@@ -1,3 +1,7 @@
+## 0.1.1
+
+* Adding shadow and gradient to Nav Bar
+
 ## 0.1.0
 
 * Update Readme
