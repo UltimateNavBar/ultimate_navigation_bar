@@ -25,15 +25,15 @@ dependencies:
 | `alignmentItems`  | Alignment vertical of icons/text                                                  | `TextAlign`   |
 | `borderRadiusBar` | Border Radius of Bar (work if isFloating = true)                                  | `BorderRadius` |
 | `gradientColors`  | List of colors that make the Nav Bar background gradient (min. 2 colors required) | `List<Colors>` |
-| `gradientColors`  | Orientation of the gradient (GradientType.horizontal or GradientType.vertical)    | `GradientType` |
+| `gradientType`    | Orientation of the gradient (GradientType.horizontal or GradientType.vertical)    | `GradientType` |
 
 ### NavBarItem
 
-| Attributes      | Description                                                                          | Type |
-|-----------------|------------------|------------|
-| `label` | Label (if empty not visible)                                                                    | `String` |
-| `icons`          | Icons                                                                       | `IconData` |
-| `onTap`          | Function to execute on tap                                                                        | `Functions` |
+| Attributes | Description                                                                      | Type        |
+|------------|----------------------------------------------------------------------------------|-------------|
+| `label`    | Label (if empty not visible)                                                     | `String`    |
+| `icon`     | Icon                                                                             | `IconData`  |
+| `onTap`    | Function to execute on tap                                                       | `Functions` |
 
 ### Documentation
 
