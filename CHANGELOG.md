@@ -1,3 +1,7 @@
+## 0.1.4
+
+* Update Readme
+
 ## 0.1.3
 
 * Fixing gradient
