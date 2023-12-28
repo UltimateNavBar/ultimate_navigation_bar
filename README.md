@@ -14,16 +14,18 @@ dependencies:
 
 ### UltimateNavBar
 
-| Attributes        | Description                                     | Type          |
-|-------------------|-------------------------------------------------|---------------|
-| `backgroundColor` | AppBar background                               | `Color`       |
-| `itemsColor`      | Color of items                                  | `Color`       |
-| `barHeight`       | AppBar height                                   | `int`         |
-| `iconsSize`       | Size of icons                                   | `double`      |
-| `isFloating`      | Nav Bar Floating                                | `bool`        |
-| `items`           | List of Items                                   | `List`        |
-| `alignmentItems`   | Alignment vertical of icons/text                | `TextAlign`   |
-| `borderRadiusBar` | Border Radius of Bar (work if isFloating = true) | `BorderRadius` |
+| Attributes        | Description                                                                       | Type          |
+|-------------------|-----------------------------------------------------------------------------------|---------------|
+| `backgroundColor` | AppBar background                                                                 | `Color`       |
+| `itemsColor`      | Color of items                                                                    | `Color`       |
+| `barHeight`       | AppBar height                                                                     | `int`         |
+| `iconsSize`       | Size of icons                                                                     | `double`      |
+| `isFloating`      | Nav Bar Floating                                                                  | `bool`        |
+| `items`           | List of Items                                                                     | `List`        |
+| `alignmentItems`  | Alignment vertical of icons/text                                                  | `TextAlign`   |
+| `borderRadiusBar` | Border Radius of Bar (work if isFloating = true)                                  | `BorderRadius` |
+| `gradientColors`  | List of colors that make the Nav Bar background gradient (min. 2 colors required) | `List<Colors>` |
+| `gradientColors`  | Orientation of the gradient (GradientType.horizontal or GradientType.vertical)    | `GradientType` |
 
 ### NavBarItem
 
