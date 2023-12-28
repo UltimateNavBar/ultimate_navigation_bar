@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ultimate_navigation_bar/src/item.dart';
 
-
-
 enum GradientType {
   horizontal,
   vertical,
 }
-
 
 class UltimateNavBar extends StatelessWidget {
   final List<NavBarItem> items;
@@ -22,9 +19,6 @@ class UltimateNavBar extends StatelessWidget {
   final bool? showIndicator;
   final int? currentIndex;
   final ValueChanged<int> onChanged;
-
-
-
 
   /// ! THIS WILL IDENTITFY WHICH TAB IS CURRENTLY ACTIVE
   /// ! USING THIS TO SHOW AND HIDE TAB INDICATOR
@@ -51,7 +45,6 @@ class UltimateNavBar extends StatelessWidget {
         super(key: key);
 
   generateItems(List<NavBarItem> items) {
-
     if (items.length > 5) {
       throw Exception(
           'You can\'t have more than 5 items in the navigation bar');
@@ -108,24 +101,30 @@ class UltimateNavBar extends StatelessWidget {
           : const EdgeInsets.all(0),
       height: barHeight?.toDouble() ?? 90,
       decoration: BoxDecoration(
-        color: backgroundColor ?? Colors.blue,
-        gradient: gradientColors != null
-          ? LinearGradient(colors: gradientColors!,
-          begin: gradientType == GradientType.horizontal ? Alignment.centerLeft : Alignment.topCenter,
-          end: gradientType == GradientType.horizontal ? Alignment.centerRight : Alignment.bottomCenter,
-        ):null,
-
-        borderRadius: borderRadiusBar != null && isFloating == true
-            ? borderRadiusBar
-            : BorderRadius.circular(0),
-        boxShadow: isFloating == true
-          ? [
-            const BoxShadow(
-              color:Colors.grey,
-              blurRadius: 4.0,
-              offset: Offset(2.0,2.0),
-            )] : null
-      ),
+          color: backgroundColor ?? Colors.blue,
+          gradient: gradientColors != null
+              ? LinearGradient(
+                  colors: gradientColors!,
+                  begin: gradientType == GradientType.horizontal
+                      ? Alignment.centerLeft
+                      : Alignment.topCenter,
+                  end: gradientType == GradientType.horizontal
+                      ? Alignment.centerRight
+                      : Alignment.bottomCenter,
+                )
+              : null,
+          borderRadius: borderRadiusBar != null && isFloating == true
+              ? borderRadiusBar
+              : BorderRadius.circular(0),
+          boxShadow: isFloating == true
+              ? [
+                  const BoxShadow(
+                    color: Colors.grey,
+                    blurRadius: 4.0,
+                    offset: Offset(2.0, 2.0),
+                  )
+                ]
+              : null),
       child: SafeArea(
         bottom: isFloating == true ? false : true,
         child: Row(

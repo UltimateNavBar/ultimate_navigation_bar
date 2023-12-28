@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
         bottomNavigationBar: UltimateNavBar(
           currentIndex: currentIndex,
           backgroundColor: Colors.blue.shade500,
-          gradientColors:[
+          gradientColors: [
             Colors.green.shade400,
             Colors.green.shade700,
             Colors.green.shade900,
