@@ -13,6 +13,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,43 +34,50 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         bottomNavigationBar: UltimateNavBar(
-            backgroundColor: Colors.blue.shade500,
-            itemsColor: Colors.white,
-            marginBar: const EdgeInsets.all(20),
-            iconsSize: 30,
-            borderRadiusBar: BorderRadius.circular(80),
-            items: [
-              NavBarItem(
-                  label: 'Home',
-                  icon: Icons.home,
-                  onTap: () {
-                    print('tapped');
-                  }),
-              NavBarItem(
-                  label: 'Search',
-                  icon: Icons.search,
-                  onTap: () {
-                    print('tapped');
-                  }),
-              NavBarItem(
-                  label: 'Profile',
-                  icon: Icons.person,
-                  onTap: () {
-                    print('tapped');
-                  }),
-              NavBarItem(
-                  label: 'Profile',
-                  icon: Icons.person,
-                  onTap: () {
-                    print('tapped');
-                  }),
-              NavBarItem(
-                  label: 'Profile',
-                  icon: Icons.person,
-                  onTap: () {
-                    print('tapped');
-                  }),
-            ]),
+          currentIndex: currentIndex,
+          backgroundColor: Colors.blue.shade500,
+          gradientColors: [
+            Colors.green.shade400,
+            Colors.green.shade700,
+            Colors.green.shade900,
+          ],
+          gradientType: GradientType.vertical,
+          itemsColor: Colors.white,
+          isFloating: true,
+          iconsSize: 30,
+          borderRadiusBar: BorderRadius.circular(80),
+          showIndicator: true,
+          items: [
+            NavBarItem(
+                label: 'Search',
+                icon: Icons.search,
+                onTap: () {
+                  print('tapped');
+                }),
+            NavBarItem(
+                label: 'Profile',
+                icon: Icons.person,
+                onTap: () {
+                  print('tapped');
+                }),
+            NavBarItem(
+                label: 'Profile',
+                icon: Icons.person,
+                onTap: () {
+                  print('tapped');
+                }),
+            NavBarItem(
+                label: 'Profile',
+                icon: Icons.person,
+                onTap: () {
+                  print('tapped');
+                }),
+          ],
+          onChanged: (value) {
+            currentIndex = value;
+            setState(() {});
+          },
+        ),
       ),
     );
   }

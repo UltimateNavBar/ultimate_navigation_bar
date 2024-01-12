@@ -1,6 +1,39 @@
-## 0.0.7
+## 0.1.5
+
+* Update tests
+
+## 0.1.4
 
 * Update Readme
+
+## 0.1.3
+
+* Fixing gradient
+
+## 0.1.2
+
+* Adding gradient to Nav Bar
+
+## 0.1.1
+
+* Adding shadow to Nav Bar
+
+## 0.1.0
+
+* Update Readme
+
+## 0.0.9
+
+* Update Readme
+
+## 0.0.8
+
+* Add indicator page
+
+## 0.0.7
+
+* Add Col Alignment
+* Add Floating NavBar
 
 ## 0.0.6
 
@@ -9,11 +42,11 @@
 
 ## 0.0.5
 
-* update Readme
+* Update Readme
 
 ## 0.0.4
 
-* update Readme
+* Update Readme
 
 
 ## 0.0.3
