@@ -51,7 +51,7 @@ class UltimateNavBar extends StatelessWidget {
 
     return items
         .map((item) => GestureDetector(
-      onTap: () => {onPressed(items.indexOf(item)), item.onTap},
+      onTap: () => {onPressed(items.indexOf(item)), item.onTap?.call()},
       child: IntrinsicHeight(
         child: SizedBox(
           child: Column(

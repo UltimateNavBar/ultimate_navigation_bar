@@ -1,3 +1,7 @@
+## 0.1.9
+
+* Fix onTap callback
+
 ## 0.1.7 - 0.1.8
 
 * Update Readme Fix Issue
