@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.blue.shade100,
+        backgroundColor: Colors.white,
         appBar: AppBar(
           title: const Text('Ultimate Navigation Bar'),
         ),
@@ -39,30 +39,20 @@ class _MyAppState extends State<MyApp> {
           itemsColor: Colors.white,
           isFloating: true,
           iconsSize: 30,
-          alignmentItems: TextAlign.start,
           borderRadiusBar: BorderRadius.circular(80),
           showIndicator: true,
           items: [
             NavBarItem(
-                label: 'Search',
-                icon: Icons.search,
+                icon: Icons.home,
                 onTap: () {
                   print('tapped');
                 }),
             NavBarItem(
-                label: 'Profile',
                 icon: Icons.person,
                 onTap: () {
                   print('tapped');
                 }),
             NavBarItem(
-                label: 'Profile',
-                icon: Icons.person,
-                onTap: () {
-                  print('tapped');
-                }),
-            NavBarItem(
-                label: 'Profile',
                 icon: Icons.person,
                 onTap: () {
                   print('tapped');
