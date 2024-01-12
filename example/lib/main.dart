@@ -44,23 +44,26 @@ class _MyAppState extends State<MyApp> {
           gradientType: GradientType.vertical,
           itemsColor: Colors.white,
           isFloating: false,
-          barHeight: 120,
+          barHeight: 100,
           iconsSize: 30,
           borderRadiusBar: BorderRadius.circular(80),
           showIndicator: true,
           items: [
             NavBarItem(
                 icon: Icons.home,
+                label: "Home",
                 onTap: () {
                   print('tapped');
                 }),
             NavBarItem(
                 icon: Icons.person,
+                label: "Profile",
                 onTap: () {
                   print('tapped');
                 }),
             NavBarItem(
                 icon: Icons.person,
+                label: "Profile",
                 onTap: () {
                   print('tapped');
                 }),
