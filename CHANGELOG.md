@@ -1,3 +1,11 @@
+## 0.1.7
+
+* Update Readme
+
+## 0.1.6
+
+* Fix Issue with onChanged and height overflow
+
 ## 0.1.5
 
 * Update tests

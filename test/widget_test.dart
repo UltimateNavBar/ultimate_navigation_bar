@@ -11,7 +11,6 @@ void main() {
         NavBarItem(icon: Icons.search, label: 'Search'),
         NavBarItem(icon: Icons.settings, label: 'Settings'),
       ],
-      onChanged: (value) {},
       backgroundColor: Colors.blue,
       gradientColors: [Colors.green, Colors.blue],
       gradientType: GradientType.horizontal,
@@ -58,7 +57,6 @@ void main() {
     // Generate the items for the `UltimateNavBar` widget.
     final generatedItems = UltimateNavBar(
       items: [],
-      onChanged: (int value) {},
     ).generateItems(items);
 
     // Verify that the items are generated correctly.

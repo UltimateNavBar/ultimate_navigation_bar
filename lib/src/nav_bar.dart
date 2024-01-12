@@ -18,16 +18,15 @@ class UltimateNavBar extends StatelessWidget {
   final Color? itemsColor;
   final bool? showIndicator;
   final int? currentIndex;
-  final ValueChanged<int> onChanged;
 
   /// ! THIS WILL IDENTITFY WHICH TAB IS CURRENTLY ACTIVE
   /// ! USING THIS TO SHOW AND HIDE TAB INDICATOR
   static ValueNotifier<int> notifyIndex = ValueNotifier<int>(0);
+  static double height = 100;
 
   const UltimateNavBar({
     Key? key,
     required this.items,
-    required this.onChanged,
     this.backgroundColor,
     this.gradientColors,
     this.gradientType,
@@ -52,45 +51,54 @@ class UltimateNavBar extends StatelessWidget {
 
     return items
         .map((item) => GestureDetector(
-              onTap: () => {onPressed(items.indexOf(item)), item.onTap},
-              child: SizedBox(
-                height: 60,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Icon(
-                      item.icon,
-                      size: iconsSize ?? 24,
-                      color: itemsColor ?? Colors.black,
+      onTap: () => {onPressed(items.indexOf(item)), item.onTap},
+      child: SizedBox(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(
+              item.icon,
+              size: iconsSize ?? 30,
+              color: itemsColor ?? Colors.black,
+            ),
+            if (item.label != null)
+              Text(item.label!,
+                  style: TextStyle(color: itemsColor ?? Colors.black)),
+            Spacer(),
+            ValueListenableBuilder(
+                valueListenable: notifyIndex,
+                builder:
+                    (BuildContext context, int value, Widget? child) {
+                  return Visibility(
+                    visible: showIndicator!,
+                    child: Container(
+                      height: 8,
+                      width: 8,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5.0),
+                        color: value == items.indexOf(item)
+                            ? itemsColor
+                            : Colors.transparent,
+                      ),
                     ),
-                    if (item.label != null)
-                      Text(item.label!,
-                          style: TextStyle(color: itemsColor ?? Colors.black)),
-                    Spacer(),
-                    ValueListenableBuilder(
-                        valueListenable: notifyIndex,
-                        builder:
-                            (BuildContext context, int value, Widget? child) {
-                          return Visibility(
-                            visible: showIndicator!,
-                            child: Container(
-                              height: 8,
-                              width: 8,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5.0),
-                                color: value == items.indexOf(item)
-                                    ? itemsColor
-                                    : Colors.transparent,
-                              ),
-                            ),
-                          );
-                        })
-                  ],
-                ),
-              ),
-            ))
+                  );
+                })
+          ],
+        ),
+      ),
+    ))
         .toList();
+  }
+
+  double calculateHeight() {
+    if(barHeight == null && iconsSize == null) {
+      return height = 70;
+    }else if(barHeight == null && iconsSize != null) {
+      return height = (iconsSize! * 100)/30;
+    }else{
+      return height = barHeight!.toDouble();
+    }
   }
 
   @override
@@ -99,7 +107,7 @@ class UltimateNavBar extends StatelessWidget {
       margin: isFloating == true
           ? const EdgeInsets.only(left: 20, right: 20, bottom: 30)
           : const EdgeInsets.all(0),
-      height: barHeight?.toDouble() ?? 90,
+      height: calculateHeight() ,
       decoration: BoxDecoration(
           color: backgroundColor ?? Colors.blue,
           gradient: gradientColors != null
@@ -135,9 +143,7 @@ class UltimateNavBar extends StatelessWidget {
     );
   }
 
-  /// * FOR CHANGING NAVIGATION BAR  INDEX
   void onPressed(int index) {
-    onChanged(index);
     notifyIndex.value = index;
   }
 }
