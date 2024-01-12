@@ -36,8 +36,15 @@ class _MyAppState extends State<MyApp> {
         bottomNavigationBar: UltimateNavBar(
           currentIndex: currentIndex,
           backgroundColor: Colors.blue.shade500,
+          gradientColors: [
+            Colors.green.shade400,
+            Colors.green.shade700,
+            Colors.green.shade900,
+          ],
+          gradientType: GradientType.vertical,
           itemsColor: Colors.white,
-          isFloating: true,
+          isFloating: false,
+          barHeight: 120,
           iconsSize: 30,
           borderRadiusBar: BorderRadius.circular(80),
           showIndicator: true,
@@ -58,10 +65,7 @@ class _MyAppState extends State<MyApp> {
                   print('tapped');
                 }),
           ],
-          onChanged: (value) {
-            currentIndex = value;
-            setState(() {});
-          },
+
         ),
       ),
     );

@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:ultimate_navigation_bar/src/item.dart';
 
+enum GradientType {
+  horizontal,
+  vertical,
+}
+
 class UltimateNavBar extends StatelessWidget {
   final List<NavBarItem> items;
   final Color? backgroundColor;
+  final List<Color>? gradientColors;
+  final GradientType? gradientType;
   final int? barHeight;
   final bool? isFloating;
   final BorderRadius? borderRadiusBar;
@@ -11,17 +18,18 @@ class UltimateNavBar extends StatelessWidget {
   final Color? itemsColor;
   final bool? showIndicator;
   final int? currentIndex;
-  final ValueChanged<int> onChanged;
 
   /// ! THIS WILL IDENTITFY WHICH TAB IS CURRENTLY ACTIVE
   /// ! USING THIS TO SHOW AND HIDE TAB INDICATOR
   static ValueNotifier<int> notifyIndex = ValueNotifier<int>(0);
+  static double height = 100;
 
   const UltimateNavBar({
     Key? key,
     required this.items,
-    required this.onChanged,
     this.backgroundColor,
+    this.gradientColors,
+    this.gradientType,
     this.barHeight,
     this.iconsSize,
     this.borderRadiusBar,
@@ -36,7 +44,6 @@ class UltimateNavBar extends StatelessWidget {
         super(key: key);
 
   generateItems(List<NavBarItem> items) {
-    final CrossAxisAlignment orientation;
 
 
     if (items.length > 5) {
@@ -48,20 +55,19 @@ class UltimateNavBar extends StatelessWidget {
         .map((item) => GestureDetector(
               onTap: () => {onPressed(items.indexOf(item)), item.onTap},
               child: SizedBox(
-                height: 60,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: orientation,
                   children: [
                     Icon(
                       item.icon,
-                      size: iconsSize ?? 24,
+                      size: iconsSize ?? 30,
                       color: itemsColor ?? Colors.black,
                     ),
-                    (item.label != null)
-                      ? Text(item.label!,
-                          style: TextStyle(color: itemsColor ?? Colors.black))
-                      :Spacer(),
+                    if (item.label != null)
+                      Text(item.label!,
+                          style: TextStyle(color: itemsColor ?? Colors.black)),
+                    Spacer(),
                     ValueListenableBuilder(
                         valueListenable: notifyIndex,
                         builder:
@@ -77,29 +83,58 @@ class UltimateNavBar extends StatelessWidget {
                                     ? itemsColor
                                     : Colors.transparent,
                               ),
-                            ),
-                          );
-                        })
-                  ],
+                            );
+                          })
+                    ],
+                  ),
                 ),
               ),
             ))
         .toList();
   }
 
+  double calculateHeight() {
+    if(barHeight == null && iconsSize == null) {
+      return height = 70;
+    }else if(barHeight == null && iconsSize != null) {
+      return height = (iconsSize! * 100)/30;
+    }else{
+      return height = barHeight!.toDouble();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: isFloating == true
-          ? EdgeInsets.only(left: 20, right: 20, bottom: 30)
-          : EdgeInsets.all(0),
-      height: barHeight?.toDouble() ?? 90,
+          ? const EdgeInsets.only(left: 20, right: 20, bottom: 30)
+          : const EdgeInsets.all(0),
+      height: calculateHeight() ,
       decoration: BoxDecoration(
-        color: backgroundColor ?? Colors.white,
-        borderRadius: borderRadiusBar != null && isFloating == true
-            ? borderRadiusBar
-            : BorderRadius.circular(0),
-      ),
+          color: backgroundColor ?? Colors.blue,
+          gradient: gradientColors != null
+              ? LinearGradient(
+                  colors: gradientColors!,
+                  begin: gradientType == GradientType.horizontal
+                      ? Alignment.centerLeft
+                      : Alignment.topCenter,
+                  end: gradientType == GradientType.horizontal
+                      ? Alignment.centerRight
+                      : Alignment.bottomCenter,
+                )
+              : null,
+          borderRadius: borderRadiusBar != null && isFloating == true
+              ? borderRadiusBar
+              : BorderRadius.circular(0),
+          boxShadow: isFloating == true
+              ? [
+                  const BoxShadow(
+                    color: Colors.grey,
+                    blurRadius: 4.0,
+                    offset: Offset(2.0, 2.0),
+                  )
+                ]
+              : null),
       child: SafeArea(
         bottom: isFloating == true ? false : true,
         child: Row(
@@ -111,7 +146,6 @@ class UltimateNavBar extends StatelessWidget {
   }
 
   void onPressed(int index) {
-    onChanged(index);
     notifyIndex.value = index;
   }
 }

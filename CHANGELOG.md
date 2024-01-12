@@ -1,3 +1,27 @@
+## 0.1.5
+
+* Update tests
+
+## 0.1.4
+
+* Update Readme
+
+## 0.1.3
+
+* Fixing gradient
+
+## 0.1.2
+
+* Adding gradient to Nav Bar
+
+## 0.1.1
+
+* Adding shadow to Nav Bar
+
+## 0.1.0
+
+* Update Readme
+
 ## 0.0.9
 
 * Update Readme
