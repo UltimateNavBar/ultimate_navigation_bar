@@ -10,6 +10,7 @@ To use this plugin, add `ultimate_navigation_bar` as a [dependency in your pubsp
 ```yaml
 dependencies:
   ultimate_navigation_bar: ^0.1.6
+
 ```
 
 
