@@ -1,6 +1,6 @@
-## 0.1.7
+## 0.1.7 - 0.1.8
 
-* Update Readme
+* Update Readme Fix Issue
 
 ## 0.1.6
 
