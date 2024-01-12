@@ -44,8 +44,6 @@ class UltimateNavBar extends StatelessWidget {
         super(key: key);
 
   generateItems(List<NavBarItem> items) {
-
-
     if (items.length > 5) {
       throw Exception(
           'You can\'t have more than 5 items in the navigation bar');
@@ -53,43 +51,43 @@ class UltimateNavBar extends StatelessWidget {
 
     return items
         .map((item) => GestureDetector(
-              onTap: () => {onPressed(items.indexOf(item)), item.onTap},
-              child: SizedBox(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: orientation,
-                  children: [
-                    Icon(
-                      item.icon,
-                      size: iconsSize ?? 30,
-                      color: itemsColor ?? Colors.black,
+      onTap: () => {onPressed(items.indexOf(item)), item.onTap},
+      child: SizedBox(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(
+              item.icon,
+              size: iconsSize ?? 30,
+              color: itemsColor ?? Colors.black,
+            ),
+            if (item.label != null)
+              Text(item.label!,
+                  style: TextStyle(color: itemsColor ?? Colors.black)),
+            Spacer(),
+            ValueListenableBuilder(
+                valueListenable: notifyIndex,
+                builder:
+                    (BuildContext context, int value, Widget? child) {
+                  return Visibility(
+                    visible: showIndicator!,
+                    child: Container(
+                      height: 8,
+                      width: 8,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5.0),
+                        color: value == items.indexOf(item)
+                            ? itemsColor
+                            : Colors.transparent,
+                      ),
                     ),
-                    if (item.label != null)
-                      Text(item.label!,
-                          style: TextStyle(color: itemsColor ?? Colors.black)),
-                    Spacer(),
-                    ValueListenableBuilder(
-                        valueListenable: notifyIndex,
-                        builder:
-                            (BuildContext context, int value, Widget? child) {
-                          return Visibility(
-                            visible: showIndicator!,
-                            child: Container(
-                              height: 8,
-                              width: 8,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5.0),
-                                color: value == items.indexOf(item)
-                                    ? itemsColor
-                                    : Colors.transparent,
-                              ),
-                            );
-                          })
-                    ],
-                  ),
-                ),
-              ),
-            ))
+                  );
+                })
+          ],
+        ),
+      ),
+    ))
         .toList();
   }
 
